@@ -147,3 +147,24 @@ var checkInclusion = function(s1, s2) {
     }
     return false;
 };
+//10. Find All Anagrams in a String
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
+ */
+var findAnagrams = function(s, p) {
+    let result = [];
+    let lenP = p.length;
+    let lenS = s.length;
+    if (lenS < lenP) return result;
+    let sortedP = p.split('').sort().join('');
+    for (let i = 0; i <= lenS - lenP; i++) {
+        let sub = s.substring(i, i + lenP);
+        if (sub.split('').sort().join('') === sortedP) {
+            result.push(i);
+        }
+    }
+
+    return result;
+};
