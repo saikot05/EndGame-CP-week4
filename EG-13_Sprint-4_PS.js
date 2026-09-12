@@ -116,3 +116,15 @@ var removeNthFromEnd = function(head, n) {
     curr.next = curr.next.next;
     return head;
 };
+//08. Find First and Last Position of Element in Sorted Array
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(nums, target) {
+    let first = nums.indexOf(target);
+    let last = nums.lastIndexOf(target);
+    return [first, last];
+};
+console.log(searchRange([5, 7, 7, 8, 8, 10], target = 8))
