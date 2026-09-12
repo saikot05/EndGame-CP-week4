@@ -44,4 +44,19 @@ var findTheDifference = function(s, t) {
     }
     return sortedT[sortedT.length - 1];
 };
-//console.log(findTheDifference("abcd", "abcde"))
+//04. Reverse Linked List
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+    let prev = null
+    let curr = head
+    while (curr) {
+        let tmp = curr.next
+        curr.next = prev
+        prev = curr
+        curr = tmp
+    }
+    return prev
+};
