@@ -127,4 +127,23 @@ var searchRange = function(nums, target) {
     let last = nums.lastIndexOf(target);
     return [first, last];
 };
-console.log(searchRange([5, 7, 7, 8, 8, 10], target = 8))
+//09. Permutation in String
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+var checkInclusion = function(s1, s2) {
+    let len1 = s1.length;
+    let len2 = s2.length;
+    if (len1 > len2) return false
+    let sortedS1 = s1.split('').sort().join('');
+    for (let i = 0; i <= len2 - len1; i++) {
+        let sub = s2.substring(i, i + len1);
+        let sortedSub = sub.split('').sort().join('');
+        if (sortedSub === sortedS1) {
+            return true;
+        }
+    }
+    return false;
+};
