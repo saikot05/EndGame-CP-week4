@@ -93,3 +93,26 @@ var productExceptSelf = function(nums) {
     }
     return result;
 };
+//07. Remove Nth Node From End of List
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+    let len = 0;
+    let curr = head;
+    while (curr) {
+        len++;
+        curr = curr.next;
+    }
+    if (len == n) {
+        return head.next;
+    }
+    curr = head;
+    for (let i = 0; i < len - n - 1; i++) {
+        curr = curr.next;
+    }
+    curr.next = curr.next.next;
+    return head;
+};
