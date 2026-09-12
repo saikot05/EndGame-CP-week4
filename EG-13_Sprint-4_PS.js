@@ -60,3 +60,17 @@ var reverseList = function(head) {
     }
     return prev
 };
+//05. Middle of the Linked List
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+    let tmp1 = head
+    let tmp2 = head
+    while (tmp2 && tmp2.next) {
+        tmp1 = tmp1.next;
+        tmp2 = tmp2.next.next;
+    }
+    return tmp1;
+};
